@@ -2,6 +2,7 @@
 
 // Set environment variable
 require('dotenv').config();
+const port = 3000;
 
 const { urlencoded } = require('express');
 // Dependencies required
@@ -23,5 +24,5 @@ const router = require('./routes/product.routes')
 app.use('/', router);
 
 
-app.listen(process.env.PORT ,()=> console.log(`App running in port ${process.env.PORT}`));
+app.listen(process.env.PORT || port ,()=> console.log(`App running in port ${process.env.PORT}`));
 
